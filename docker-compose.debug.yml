@@ -1,0 +1,15 @@
+version: '3'
+services:
+    ezmaster-libpostal:
+        container_name: ezmaster-libpostal
+        build:
+            context: .
+            args:
+                - http_proxy
+                - https_proxy
+        image: inistcnrs/ezmaster-libpostal:1.0.0
+        environment:
+            - http_proxy
+            - https_proxy
+        ports:
+            - "31976:31976"

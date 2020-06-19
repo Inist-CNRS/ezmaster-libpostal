@@ -1,0 +1,40 @@
+{
+	"name": "ezmaster-libpostal",
+	"version": "1.0.0",
+	"description": "Ezmaster WebService for libpostal",
+	"directories": {},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/Inist-CNRS/ezmaster-libpostal.git"
+	},
+	"keywords": [
+		"lodex",
+		"ezs"
+	],
+	"contributors": [
+		"Nicolas Thouvenin <nthouvenin@gmail.com>"
+	],
+	"license": "CECILL-2.1",
+	"bugs": {
+		"url": "https://github.com/Inist-CNRS/ezmaster-libpostal/issues"
+	},
+	"homepage": "https://github.com/Inist-CNRS/ezmaster-libpostal#readme",
+	"dependencies": {
+		"dotenv-cli": "3.1.0",
+		"@ezs/core": "1.9.2",
+		"@ezs/basics": "1.2.6",
+		"@ezs/local": "file:./local"
+	},
+	"devDependencies": {},
+	"peerDependencies": {},
+	"scripts": {
+		"prestart": "node ./generate-dotenv.js",
+		"start": "dotenv -- ezs --daemon ./public",
+		"insertversion:readme": "sed -i \"s#\\(ezmaster-libpostal:\\)\\([\\.a-z0-9]\\+\\)#\\1${npm_package_version}#g\" README.md",
+		"insertversion:makefile": "sed -i \"s#\\(ezmaster-libpostal:\\)\\([\\.a-z0-9]\\+\\)#\\1${npm_package_version}#g\" Makefile",
+		"insertversion:docker": "sed -i \"s#\\(ezmaster-libpostal:\\)\\([\\.a-z0-9]\\+\\)#\\1${npm_package_version}#g\" docker-compose*.yml",
+		"version": "npm run insertversion:readme && npm run insertversion:makefile && npm run insertversion:docker && git add README.md Makefile docker-compose.debug.yml",
+		"postversion": "git push && git push --tags"
+	},
+	"private": true
+}
