@@ -1,6 +1,6 @@
 FROM node:12
 RUN apt-get update -y
-RUN apt-get install -y curl libsnappy-dev autoconf automake libtool pkg-config
+RUN apt-get install -y curl libsnappy-dev autoconf automake libtool pkg-config sudo
 
 RUN git clone https://github.com/openvenues/libpostal /src/libpostal
 WORKDIR /src/libpostal
@@ -23,7 +23,6 @@ RUN echo '{ \
   "httpPort": 31976, \
   "configPath": "/app/config.json", \
   "dataPath": "/app/public" \
-  "technicalApplication": true \
 }' > /etc/ezmaster.json
 
 WORKDIR /app
@@ -37,6 +36,6 @@ RUN mkdir -p /app/public /sbin/.npm /sbin/.config \
 	&& chown -R daemon:daemon /app /sbin/.npm /sbin/.config
 COPY public/ /app/public
 
-USER daemon:daemon
+EXPOSE 31976
 ENTRYPOINT [ "/app/docker-entrypoint.sh" ]
 CMD [ "npm", "start" ]

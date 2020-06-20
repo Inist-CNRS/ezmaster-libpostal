@@ -1,3 +1,3 @@
 #!/bin/sh
-sudo chown -R daemon:daemon /app /tmp
-exec $*
+chown -R daemon:daemon /app /tmp
+exec sudo -u daemon -g daemon $*
