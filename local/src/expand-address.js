@@ -8,5 +8,8 @@ export default function parseAddress(data, feed) {
         return feed.send(data);
     }
     const result = postal.expand.expand_address(data.trim());
-    return feed.send(result);
+    return feed.send({
+        id: data,
+        value: result,
+    });
 }
