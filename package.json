@@ -20,9 +20,11 @@
 	},
 	"homepage": "https://github.com/Inist-CNRS/ezmaster-libpostal#readme",
 	"dependencies": {
-		"dotenv-cli": "3.1.0",
-		"@ezs/core": "1.9.2",
-		"@ezs/basics": "1.2.6",
+		"dotenv-cli": "3.2.0",
+		"@ezs/core": "1.10.1",
+		"@ezs/basics": "1.4.1",
+		"@ezs/analytics" : "1.6.2",
+		"@ezs/storage": "1.2.1",
 		"@ezs/local": "file:./local"
 	},
 	"devDependencies": {},
