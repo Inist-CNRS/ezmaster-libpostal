@@ -1,6 +1,6 @@
 {
 	"environnement": {
-		"EZS_VERBOSE": false,
+		"EZS_VERBOSE": true,
 		"EZS_CONCURRENCY": 4,
 		"EZS_NSHARDS": 32,
 		"EZS_CACHE": false,

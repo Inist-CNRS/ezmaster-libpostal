@@ -1,6 +1,9 @@
 {
 	"dependencies": {
-		"@cymen/node-postal": "2.0.4"
+		"@cymen/node-postal": "2.0.4",
+		"lodash.clone": "^4.5.0",
+		"lodash.get": "^4.4.2",
+		"lodash.set": "^4.3.2"
 	},
 	"devDependencies": {
 		"@babel/cli": "~7.8.4",
@@ -22,5 +25,5 @@
 		"lint": "eslint --ext=.js ./test/*.js ./src/*.js",
 		"build": "babel ./src --out-dir ./lib"
 	},
-    "private": true
+	"private": true
 }
