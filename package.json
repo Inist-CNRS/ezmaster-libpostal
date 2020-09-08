@@ -22,7 +22,7 @@
 	"dependencies": {
 		"dotenv-cli": "3.2.0",
 		"@ezs/core": "1.12.3",
-		"@ezs/basics": "1.4.5",
+		"@ezs/basics": "1.4.6",
 		"@ezs/analytics": "1.8.0",
 		"@ezs/storage": "1.2.4",
 		"@ezs/local": "file:./local"
