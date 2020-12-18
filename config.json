@@ -1,9 +1,12 @@
 {
 	"environnement": {
-		"EZS_VERBOSE": true,
+		"EZS_TITLE": "ws-libpostal",
+		"EZS_DESCRIPTION": "web services for Libpostal",
+		"EZS_METRICS": true,
+		"EZS_VERBOSE": false,
 		"EZS_CONCURRENCY": 4,
 		"EZS_NSHARDS": 32,
-		"EZS_CACHE": false,
+		"EZS_CACHE": true,
 		"NODE_OPTIONS": "--max_old_space_size=1024",
 		"NODE_ENV": "production"
 	}

@@ -6,10 +6,12 @@ RUN git clone https://github.com/openvenues/libpostal /src/libpostal
 WORKDIR /src/libpostal
 RUN ./bootstrap.sh \
 	&& mkdir /data \
-    && ./configure --prefix=/usr --datadir=/usr/share/libpostal \
-	&& make -j "$(nproc)" \
-	&& make check \
-	&& make install \
+    && ./configure --prefix=/usr --datadir=/usr/share/libpostal 
+
+RUN	make -j "$(nproc)" \
+	&& make check
+
+RUN make install \
 	&& ldconfig \
 	&& rm -rf /src
 WORKDIR /app/local
